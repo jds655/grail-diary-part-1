@@ -10,6 +10,14 @@ import UIKit
 
 class POITableViewCell: UITableViewCell {
 
+    
+    var POI:POI? {
+        // didSet is a property observer, it will be called every time friend is set
+        didSet {
+            updateViews()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +27,14 @@ class POITableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    private func updateViews() {
+        guard let POI = POI else { return }
+        
+//        .text = friend.name
+//        hometownLabel.text = friend.hometown
+//        hobbyCountLabel.text = "\(friend.hobbies.count) # of clues"
     }
 
 }

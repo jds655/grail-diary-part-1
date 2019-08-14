@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E077DA69230485C600253F8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E077DA68230485C600253F8A /* AppDelegate.swift */; };
-		E077DA6B230485C600253F8A /* CluesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E077DA6A230485C600253F8A /* CluesTableViewController.swift */; };
 		E077DA6E230485C600253F8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E077DA6C230485C600253F8A /* Main.storyboard */; };
 		E077DA70230485C800253F8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E077DA6F230485C800253F8A /* Assets.xcassets */; };
 		E077DA73230485C800253F8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E077DA71230485C800253F8A /* LaunchScreen.storyboard */; };
@@ -22,7 +21,6 @@
 /* Begin PBXFileReference section */
 		E077DA65230485C600253F8A /* GrailDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrailDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E077DA68230485C600253F8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E077DA6A230485C600253F8A /* CluesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CluesTableViewController.swift; sourceTree = "<group>"; };
 		E077DA6D230485C600253F8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E077DA6F230485C800253F8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E077DA72230485C800253F8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				E077DA68230485C600253F8A /* AppDelegate.swift */,
-				E077DA6A230485C600253F8A /* CluesTableViewController.swift */,
 				E077DA6C230485C600253F8A /* Main.storyboard */,
 				E077DA6F230485C800253F8A /* Assets.xcassets */,
 				E077DA71230485C800253F8A /* LaunchScreen.storyboard */,
@@ -153,7 +150,6 @@
 				E077DA83230497D500253F8A /* POI.swift in Sources */,
 				E077DA7B230496FC00253F8A /* POIsTableViewController.swift in Sources */,
 				E077DA7D2304973A00253F8A /* AddPOIViewController.swift in Sources */,
-				E077DA6B230485C600253F8A /* CluesTableViewController.swift in Sources */,
 				E077DA69230485C600253F8A /* AppDelegate.swift in Sources */,
 				E077DA81230497BC00253F8A /* POITableViewCell.swift in Sources */,
 				E077DA7F2304975C00253F8A /* POIDetailViewController.swift in Sources */,

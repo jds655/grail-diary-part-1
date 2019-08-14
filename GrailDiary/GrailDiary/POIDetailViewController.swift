@@ -10,10 +10,29 @@ import UIKit
 
 class POIDetailViewController: UIViewController {
 
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var cluesView: UITextView!
+    
+    var POI: POI?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews()
+    }
+    
+    private func updateViews() {
+        guard let POI = POI else { return }
+        
+        locationLabel.text =  POI.location
+        countryLabel.text = POI.country
+        var cluesText = ""
+        for clue in POI.clues {
+            // Append each clue with a bullet point
+            // \n will add a "new line charecter", the same thing the enter key does.
+            cluesText += "• \(clue)\n"
+        }
+        cluesView.text = cluesText
     }
     
 
