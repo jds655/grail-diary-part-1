@@ -8,11 +8,11 @@
 
 import UIKit
 
-internal protocol AddPOIDelegate {
+protocol AddPOIDelegate {
     func poiWasCreated (_ POI: POI)
 }
 
-internal class AddPOIViewController: UIViewController {
+class AddPOIViewController: UIViewController {
 
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
@@ -42,7 +42,13 @@ internal class AddPOIViewController: UIViewController {
         if let clue1 = clue1TextField.text, !clue1.isEmpty {
             poi.clues.append(clue1)
         }
-        
+        if let clue2 = clue2TextField.text, !clue2.isEmpty {
+            poi.clues.append(clue2)
+        }
+        if let clue3 = clue3TextField.text, !clue3.isEmpty {
+            poi.clues.append(clue3)
+        }
+        delegate?.poiWasCreated(poi)
     }
     
     /*
@@ -55,4 +61,9 @@ internal class AddPOIViewController: UIViewController {
     }
     */
 
+}
+extension UITextFieldDelegate {
+    func textFieldShouldReturn() {
+        
+    }
 }
