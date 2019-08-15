@@ -33,11 +33,15 @@ class POITableViewCell: UITableViewCell {
     }
     
     private func updateViews() {
-        // guard let POI = POI else { return }
-        
-//        .text = friend.name
-//        hometownLabel.text = friend.hometown
-//        hobbyCountLabel.text = "\(friend.hobbies.count) # of clues"
+        guard let POI = POI else { return }
+        locationLabel.text = POI.location
+        countryLabel.text = POI.country
+        let cluesCount = POI.clues.count
+        if cluesCount > 1 {
+            cluesLabel.text = "\(cluesCount) clues"
+        } else {
+            cluesLabel.text = "\(cluesCount) clue"
+        }
     }
 
 }

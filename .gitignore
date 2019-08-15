@@ -4,3 +4,5 @@ GrailDiary/GrailDiary\.xcodeproj/project\.xcworkspace/xcuserdata/joshuasharp\.xc
 *.xcsettings
 
 *.xcuserstate
+
+*.xcbkptlist
