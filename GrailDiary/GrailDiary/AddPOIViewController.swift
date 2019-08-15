@@ -12,20 +12,16 @@ protocol AddPOIDelegate {
     func poiWasCreated (_ POI: POI)
 }
 
-class AddPOIViewController: UIViewController {
+class AddPOIViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
-    @IBOutlet weak var clue1TextField: UITextField!
-    @IBOutlet weak var clue2TextField: UITextField!
-    @IBOutlet weak var clue3TextField: UITextField!
-    
+    @IBOutlet weak var clueTableView: UITableView!
     var delegate: AddPOIDelegate?
+    var clueList:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
@@ -37,18 +33,21 @@ class AddPOIViewController: UIViewController {
                 !location.isEmpty,
                 !country.isEmpty else { return }
         
-        var poi = POI(location: location, country: country, clues: [])
-        
-        if let clue1 = clue1TextField.text, !clue1.isEmpty {
-            poi.clues.append(clue1)
-        }
-        if let clue2 = clue2TextField.text, !clue2.isEmpty {
-            poi.clues.append(clue2)
-        }
-        if let clue3 = clue3TextField.text, !clue3.isEmpty {
-            poi.clues.append(clue3)
-        }
+        let poi = POI(location: location, country: country, clues: [])
         delegate?.poiWasCreated(poi)
+    }
+    
+    //MARK: UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return clueList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "clueCell", for: indexPath)
+        let clue = clueList[indexPath.row]
+        cell.detailTextLabel?.text = clue
+        return cell
     }
     
     /*
@@ -69,19 +68,6 @@ extension AddPOIViewController: UITextFieldDelegate {
             textField.becomeFirstResponder()
             return false
         }
-//            switch textField {
-//            case locationTextField:
-//                countryTextField.becomeFirstResponder()
-//            case countryTextField:
-//                clue1TextField.becomeFirstResponder()
-//            case clue1TextField:
-//                clue2TextField.becomeFirstResponder()
-//            case clue2TextField:
-//                clue3TextField.becomeFirstResponder()
-//            default:
-//                textField.resignFirstResponder()
-//            }
-//        }
         return true
     }
 }
