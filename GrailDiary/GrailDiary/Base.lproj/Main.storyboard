@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="grailDiaryCell" id="uB3-aQ-VLc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="grailDiaryCell" id="uB3-aQ-VLc" customClass="POITableViewCell" customModule="GrailDiary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uB3-aQ-VLc" id="SZ4-Qf-1rq">
@@ -30,22 +30,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of clues" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P23-SN-G6F">
-                                                    <rect key="frame" x="280" y="19.5" width="75" height="20.5"/>
+                                                    <rect key="frame" x="319" y="19.5" width="75" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YN2-u9-jYu">
-                                                    <rect key="frame" x="20" y="1.5" width="225" height="56.5"/>
+                                                    <rect key="frame" x="20" y="1.5" width="264" height="56.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2Z-Za-W3G">
-                                                            <rect key="frame" x="0.0" y="0.0" width="225" height="36"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="264" height="36"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yw3-x8-oan">
-                                                            <rect key="frame" x="0.0" y="36" width="225" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="36" width="264" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -63,6 +63,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cluesLabel" destination="P23-SN-G6F" id="mR5-Vj-Yma"/>
+                                            <outlet property="countryLabel" destination="yw3-x8-oan" id="rNn-O3-LP5"/>
+                                            <outlet property="locationLabel" destination="h2Z-Za-W3G" id="TDm-fT-1O2"/>
                                             <segue destination="7c6-0L-iAk" kind="show" identifier="ShowPOIDetailSegue" id="moB-5C-psv"/>
                                         </connections>
                                     </tableViewCell>
@@ -86,7 +89,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="poiTableView" destination="Z8H-ts-l44" id="UKz-qr-6ZU"/>
+                        <outlet property="tableView" destination="Z8H-ts-l44" id="Ndg-mB-14M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

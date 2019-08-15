@@ -62,8 +62,8 @@ class AddPOIViewController: UIViewController {
     */
 
 }
-extension UITextFieldDelegate {
-    func textFieldShouldReturn() {
-        
+extension AddPOIViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
     }
 }

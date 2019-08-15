@@ -10,6 +10,9 @@ import UIKit
 
 class POITableViewCell: UITableViewCell {
 
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var cluesLabel: UILabel!
     
     var POI:POI? {
         // didSet is a property observer, it will be called every time friend is set
@@ -30,7 +33,7 @@ class POITableViewCell: UITableViewCell {
     }
     
     private func updateViews() {
-        guard let POI = POI else { return }
+        // guard let POI = POI else { return }
         
 //        .text = friend.name
 //        hometownLabel.text = friend.hometown

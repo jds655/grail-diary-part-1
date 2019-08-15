@@ -23,7 +23,7 @@ class POIsTableViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddPOIModalSegue" {
             if let addPOIVC = segue.destination as? AddPOIViewController {
-                //addPOIVC.delegate = self
+                addPOIVC.delegate = self
             }
         } else if segue.identifier == "ShowPOIDetailSegue" {
             if let indexPath = tableView.indexPathForSelectedRow,

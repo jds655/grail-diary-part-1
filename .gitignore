@@ -1,2 +1,6 @@
 
 GrailDiary/GrailDiary\.xcodeproj/project\.xcworkspace/xcuserdata/joshuasharp\.xcuserdatad/UserInterfaceState\.xcuserstate
+
+*.xcsettings
+
+*.xcuserstate
