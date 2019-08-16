@@ -22,9 +22,11 @@ class AddPOIViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        clueTableView.dataSource = self
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveTapped(_ sender: Any) {
@@ -33,7 +35,7 @@ class AddPOIViewController: UIViewController, UITableViewDataSource {
                 !location.isEmpty,
                 !country.isEmpty else { return }
         
-        let poi = POI(location: location, country: country, clues: [])
+        let poi = POI(location: location, country: country, clues: clueList)
         delegate?.poiWasCreated(poi)
     }
     
@@ -45,7 +47,6 @@ class AddPOIViewController: UIViewController, UITableViewDataSource {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             if let textField = alert?.textFields?[0] {
                 if let textValue = textField.text {
-                    print("Text field: \(textValue)")
                     self.clueList.append(textValue)
                     self.clueTableView.reloadData()
                 }
@@ -63,7 +64,7 @@ class AddPOIViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "clueCell", for: indexPath)
         let clue = clueList[indexPath.row]
-        cell.detailTextLabel?.text = clue
+        cell.textLabel?.text = clue
         return cell
     }
 }

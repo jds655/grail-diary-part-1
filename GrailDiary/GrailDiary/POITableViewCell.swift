@@ -37,10 +37,10 @@ class POITableViewCell: UITableViewCell {
         locationLabel.text = POI.location
         countryLabel.text = POI.country
         let cluesCount = POI.clues.count
-        if cluesCount > 1 {
-            cluesLabel.text = "\(cluesCount) clues"
-        } else {
+        if cluesCount == 1 {
             cluesLabel.text = "\(cluesCount) clue"
+        } else {
+            cluesLabel.text = "\(cluesCount) clues"
         }
     }
 
