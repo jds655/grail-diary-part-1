@@ -37,6 +37,23 @@ class AddPOIViewController: UIViewController, UITableViewDataSource {
         delegate?.poiWasCreated(poi)
     }
     
+    @IBAction func addTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "New Clue", message: "Enter a clue", preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.text = ""
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            if let textField = alert?.textFields?[0] {
+                if let textValue = textField.text {
+                    print("Text field: \(textValue)")
+                    self.clueList.append(textValue)
+                    self.clueTableView.reloadData()
+                }
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     //MARK: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,18 +66,8 @@ class AddPOIViewController: UIViewController, UITableViewDataSource {
         cell.detailTextLabel?.text = clue
         return cell
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
 extension AddPOIViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text, !text.isEmpty else
